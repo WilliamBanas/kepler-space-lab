@@ -1,5 +1,6 @@
 :root {
-  --primary-color: #f5f5f5;
+  --primary-color: #fff;
+  --secondary-color: #dadada;
 }
 
 /* animation qui commence 1s apres mount, dure 0.5s et finit 1.5s après le mount */
@@ -9,7 +10,7 @@ h1, h2, h3, p {
   opacity: 0;
 }
 
-/* animation qui commence 1.50s apres mount, dure 0.5s et finit 2s après le mount */
+/* animation qui commence 1.5s apres mount, dure 0.5s et finit 2s après le mount */
 p {
   animation-delay: 1.5s;
 }
@@ -26,19 +27,19 @@ p {
   animation: fadeInTextLogo cubic-bezier(0, 0, 0, 1) 1s;
 }
 
-/* animation qui commence 1s apres mount, dure 1.5s et finit 2.5s après le mount */
+/* animation qui commence 2.75s apres mount, dure 0.5s et finit 3.25s après le mount */
 #rotateInOrbitLogo {
-  animation: rotateInOrbitLogo cubic-bezier(0, 0, 0, 1) 1.5s;
-  animation-delay: 1s;
+  animation: rotateInOrbitLogo cubic-bezier(0, 0, 0, 1) 0.5s;
+  animation-delay: 2.75s;
   animation-fill-mode: forwards;
   transform-origin: center;
   opacity: 0;
 }
 
-/* animation qui commence 0.5s apres mount, dure 1s et finit 1.5s après le mount */
+/* animation qui commence 2s apres mount, dure 1s et finit 3s après le mount */
 #rotateInPlanetLogo {
   animation: rotateInPlanetLogo cubic-bezier(0, 0, 0, 1) 1s;
-  animation-delay: 0.5s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
   transform-origin: center;
   opacity: 0;

@@ -3,6 +3,7 @@ import StarField from "./components/Starfield";
 import styles from "./page.module.css";
 import Logo from "./components/Logo";
 import Head from "next/head";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Home: React.FC = () => {
 	return (
@@ -23,7 +24,7 @@ const Home: React.FC = () => {
 					system and their orbital path
 				</p>
 
-				<button id="callToActionButton" className={styles.home__button}>Begin exploration</button>
+				<button id="callToActionButton" className={styles.home__button}><ChevronRight className={styles.home__button_icon} />Begin exploration<ChevronLeft className={styles.home__button_icon} /> </button>
 			</main>
 		</>
 	);
