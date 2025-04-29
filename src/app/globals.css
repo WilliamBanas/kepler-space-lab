@@ -1,6 +1,74 @@
 :root {
-  --background: #ffffff;
+  --primary-color: #f5f5f5;
   --foreground: #171717;
 }
 
+#fadeInTextLogo {
+  animation: fadeInTextLogo cubic-bezier(0, 0, 0, 1) 1.5s;
+}
 
+#rotateInOrbitLogo {
+  animation: rotateInOrbitLogo 1.5s cubic-bezier(0, 0, 0, 1);
+  transform-origin: center;
+}
+
+#rotateInPlanetLogo {
+  animation: rotateInPlanetLogo cubic-bezier(0, 0, 0, 1) 1.5s;
+  transform-origin: center;
+}
+
+@keyframes fadeInTextLogo {
+  from {
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotateInOrbitLogo {
+  from {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+    transform: rotate(67.5deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+    opacity: 1;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0;
+  }
+}
+
+@keyframes rotateInPlanetLogo {
+  from {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+    transform: rotate(67.5deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
