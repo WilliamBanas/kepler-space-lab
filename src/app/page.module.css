@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6rem;
+  gap: 8rem;
 }
 
 .home__header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 8em;
+  margin-top: 6em;
 }
 
 .home__header_logo {

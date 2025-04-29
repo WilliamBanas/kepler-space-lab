@@ -23,7 +23,7 @@ const Home: React.FC = () => {
 					system and their orbital path
 				</p>
 
-				<button className={styles.home__button}>Begin exploration</button>
+				<button id="callToActionButton" className={styles.home__button}>Begin exploration</button>
 			</main>
 		</>
 	);
