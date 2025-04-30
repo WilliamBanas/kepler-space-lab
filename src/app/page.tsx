@@ -1,7 +1,7 @@
 import React from "react";
-import StarField from "./components/Starfield";
+import StarField from "./components/Starfield/Starfield";
 import styles from "./page.module.css";
-import Logo from "./components/Logo";
+import Logo from "./components/Logo/Logo";
 import Head from "next/head";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
