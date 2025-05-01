@@ -1,10 +1,10 @@
 'use client';
-// ClientLayout.tsx - composant client pour la gestion de Three.js
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import { div } from 'three/tsl';
 
 // Import dynamique pour s'assurer que le composant n'est chargé que côté client
-const StarField = dynamic(() => import('./components/Starfield/Starfield'), {
+const StarFieldCanvas = dynamic(() => import('./components/Starfield/StarfieldComponents'), {
   ssr: false,
   loading: () => (
     <div style={{ 
@@ -13,8 +13,7 @@ const StarField = dynamic(() => import('./components/Starfield/Starfield'), {
       left: 0, 
       width: '100%', 
       height: '100%',
-      backgroundColor: '#000010', 
-      zIndex: -1 
+      backgroundColor: '#000000', 
     }} />
   )
 });
@@ -26,7 +25,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     console.log("ClientLayout mounted");
     setMounted(true);
     
-    // Vérifier que Three.js est disponible
     if (typeof window !== 'undefined') {
       try {
         // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -41,7 +39,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <>
 
-      {mounted && <StarField />}
+      {mounted && <div id='starFieldContainer'><StarFieldCanvas /></div> }
       <div id="content">{children}</div>
     </>
   );

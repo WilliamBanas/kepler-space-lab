@@ -6,8 +6,10 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 #__next, body {
@@ -18,13 +20,25 @@ html, body {
 }
 
 #content {
-  position: relative;
-  z-index: 1;
+  height: 100%;
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
+  color: #dadada;
+  pointer-events: none;
+}
+
+#starFieldContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0; 
+  pointer-events: auto;
+
 }
 
 /* animation qui commence 1s apres mount, dure 0.5s et finit 1.5s après le mount */

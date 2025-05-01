@@ -1,20 +1,10 @@
-/* /components/Starfield/styles.module.css */
 .starField {
-  position: absolute; /* ou fixed selon le layout */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  width: 100vw !important;
+  height: 100vh !important;
+  display: block !important;
   background-color: black;
   z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.starField canvas {
-  width: 100% !important;
-  height: 100% !important;
-  display: block !important;
   image-rendering: optimizeSpeed; 
-  position: absolute;
+  touch-action: none;
 }
