@@ -13,7 +13,8 @@ services:
       - WATCHPACK_POLLING=true
       - CHOKIDAR_USEPOLLING=true
       - NODE_ENV=development
-    command: sh -c "npm install && npm run dev"
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@database:5432/${POSTGRES_DB}
+    command: sh -c "chmod +x ./db-init.sh && npm install && ./db-init.sh && npm run dev"
 
   database:
     image: postgres:16

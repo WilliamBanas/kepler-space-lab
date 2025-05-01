@@ -2471,10 +2471,10 @@ export namespace Prisma {
 
   export type CelestialBodyWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    name?: string
     AND?: CelestialBodyWhereInput | CelestialBodyWhereInput[]
     OR?: CelestialBodyWhereInput[]
     NOT?: CelestialBodyWhereInput | CelestialBodyWhereInput[]
-    name?: StringFilter<"CelestialBody"> | string
     type?: StringFilter<"CelestialBody"> | string
     equatorialRadius?: FloatFilter<"CelestialBody"> | number
     mass?: FloatFilter<"CelestialBody"> | number
@@ -2495,7 +2495,7 @@ export namespace Prisma {
     parentId?: IntNullableFilter<"CelestialBody"> | number | null
     parent?: XOR<CelestialBodyNullableScalarRelationFilter, CelestialBodyWhereInput> | null
     celestialBodies?: CelestialBodyListRelationFilter
-  }, "id">
+  }, "id" | "name">
 
   export type CelestialBodyOrderByWithAggregationInput = {
     id?: SortOrder

@@ -53,7 +53,7 @@ const StarPoints: React.FC = () => {
 			const texture = new THREE.CanvasTexture(canvas);
 
 			return new THREE.PointsMaterial({
-				size: 10,
+				size: 20,
 				map: texture,
 				transparent: true,
 				depthWrite: false,
@@ -63,7 +63,7 @@ const StarPoints: React.FC = () => {
 		}
 
 		return new THREE.PointsMaterial({
-			size: 5,
+			size: 20,
 			color: "white",
 		});
 	}, []);

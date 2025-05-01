@@ -17,7 +17,8 @@
     "orbitalInclination": 0,
     "argumentOfPeriapsis": 0,
     "longitudeOfAscendingNode": 0,
-    "meanAnomaly": 0
+    "meanAnomaly": 0,
+    "parentId" : null
   },
   {
     "name": "Mercury",
@@ -37,7 +38,8 @@
     "orbitalInclination": 7.005,
     "argumentOfPeriapsis": 29.124,
     "longitudeOfAscendingNode": 48.331,
-    "meanAnomaly": 174.796
+    "meanAnomaly": 174.796,
+    "parentId" : 1
   },
   {
     "name": "Venus",
@@ -57,7 +59,8 @@
     "orbitalInclination": 3.3947,
     "argumentOfPeriapsis": 54.884,
     "longitudeOfAscendingNode": 76.68,
-    "meanAnomaly": 50.115
+    "meanAnomaly": 50.115,
+    "parentId" : 1
   },
   {
     "name": "Earth",
@@ -77,7 +80,8 @@
     "orbitalInclination": 0,
     "argumentOfPeriapsis": 114.207,
     "longitudeOfAscendingNode": -11.26064,
-    "meanAnomaly": 357.51716
+    "meanAnomaly": 357.51716,
+    "parentId" : 1
   },
   {
     "name": "Mars",
@@ -97,7 +101,8 @@
     "orbitalInclination": 1.85,
     "argumentOfPeriapsis": 286.502,
     "longitudeOfAscendingNode": 49.558,
-    "meanAnomaly": 19.412
+    "meanAnomaly": 19.412,
+    "parentId" : 1
   },
   {
     "name": "Jupiter",
@@ -117,7 +122,8 @@
     "orbitalInclination": 1.303,
     "argumentOfPeriapsis": 273.867,
     "longitudeOfAscendingNode": 100.464,
-    "meanAnomaly": 20.02
+    "meanAnomaly": 20.02,
+    "parentId" : 1
   },
   {
     "name": "Saturn",
@@ -137,7 +143,8 @@
     "orbitalInclination": 2.485,
     "argumentOfPeriapsis": 339.392,
     "longitudeOfAscendingNode": 113.665,
-    "meanAnomaly": 317.02
+    "meanAnomaly": 317.02,
+    "parentId" : 1
   },
   {
     "name": "Uranus",
@@ -157,7 +164,8 @@
     "orbitalInclination": 0.773,
     "argumentOfPeriapsis": 96.998857,
     "longitudeOfAscendingNode": 74.006,
-    "meanAnomaly": 142.2386
+    "meanAnomaly": 142.2386,
+    "parentId" : 1
   },
   {
     "name": "Neptune",
@@ -177,6 +185,7 @@
     "orbitalInclination": 1.77,
     "argumentOfPeriapsis": 273.187,
     "longitudeOfAscendingNode": 131.721,
-    "meanAnomaly": 256.228
+    "meanAnomaly": 256.228,
+    "parentId" : 1
   }
 ]
