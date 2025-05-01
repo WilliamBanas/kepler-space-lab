@@ -1,17 +1,18 @@
 "use client";
-import React, { useRef, useMemo, Suspense } from "react";
+import React, { useRef, useMemo, Suspense, useEffect, useState } from "react";
 import * as THREE from "three";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useCameraConfig } from "@/app/hooks/useCameraConfig";
 import styles from './styles.module.css';
+import { usePathname } from "next/navigation";
 
 const StarPoints: React.FC = () => {
 	const pointsRef = useRef<THREE.Points>(null);
 
-	const starCount = 8000;
-	const minRadius = 4500; // Rayon minimal de la sphère
-	const maxRadius = 4800; // Rayon maximal de la sphère
+	const starCount = 32000;
+	const minRadius = 28000; 
+	const maxRadius = 30000; 
 
 	const geometry = useMemo(() => {
 		const geo = new THREE.BufferGeometry();
@@ -33,7 +34,6 @@ const StarPoints: React.FC = () => {
 		return geo;
 	}, []);
 
-	// Matériel des points (étoiles)
 	const material = useMemo(() => {
 		const canvas = document.createElement("canvas");
 		canvas.width = 64;
@@ -53,7 +53,7 @@ const StarPoints: React.FC = () => {
 			const texture = new THREE.CanvasTexture(canvas);
 
 			return new THREE.PointsMaterial({
-				size: 20,
+				size: 50,
 				map: texture,
 				transparent: true,
 				depthWrite: false,
@@ -70,6 +70,51 @@ const StarPoints: React.FC = () => {
 
 	return <points ref={pointsRef} geometry={geometry} material={material} />;
 };
+
+const CameraController: React.FC = () => {
+  const { camera } = useThree();
+  const { position, near, far } = useCameraConfig();
+  const pathname = usePathname();
+  
+  const [targetPosition] = useState(() => new THREE.Vector3(...position));
+  
+  const prevPathRef = useRef(pathname);
+
+  const startPositionRef = useRef<THREE.Vector3>(camera.position.clone());
+  
+  const transitionDuration = 4.0;
+  const transitionProgressRef = useRef(0);
+  
+  useEffect(() => {
+    if (prevPathRef.current !== pathname) {
+      transitionProgressRef.current = 0;
+      startPositionRef.current.copy(camera.position); 
+      targetPosition.set(...position);            
+      prevPathRef.current = pathname;
+    }
+  }, [pathname, position, targetPosition]);
+
+  useFrame((_, delta) => {
+    camera.near = near;
+    camera.far = far;
+    
+    if (transitionProgressRef.current < transitionDuration) {
+      transitionProgressRef.current += delta;
+      const progress = Math.min(transitionProgressRef.current / transitionDuration, 1);
+      
+      const easedProgress = easeInOutCubic(progress);
+      
+      camera.position.lerpVectors(startPositionRef.current, targetPosition, easedProgress);
+      camera.updateProjectionMatrix();
+    }
+  });
+
+  return null;
+};
+
+function easeInOutCubic(x: number): number {
+  return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+}
 
 const StarFieldCanvas: React.FC = () => {
 	const { position, fov, near, far, controls } = useCameraConfig();
@@ -88,10 +133,11 @@ const StarFieldCanvas: React.FC = () => {
 						onChange={() => console.log("Camera moved")}
 						enableZoom={true}
 						enablePan={false}
-						maxDistance={10000}
+						maxDistance={25000}
 						minDistance={1}
 					/>
 				)}
+        <CameraController/>
         <primitive object={new THREE.AxesHelper(1000)} />
 			</Suspense>
 		</Canvas>
