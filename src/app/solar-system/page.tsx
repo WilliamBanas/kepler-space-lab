@@ -5,7 +5,7 @@ import styles from './page.module.css'
 
 const SolarSystem: React.FC = () => {
   return (
-    <main className={styles.solarSystem}><Link href="/">Hello world</Link></main>
+    <main className={styles.solarSystem}><Link style={{ padding: '100px', textDecoration: 'none' }} href="/">Hello world</Link></main>
   );
 };
 

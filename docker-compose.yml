@@ -9,16 +9,17 @@ services:
       - .:/app
       - /app/node_modules
       - /app/.next
+    depends_on:
+      - database
     environment:
       - WATCHPACK_POLLING=true
       - CHOKIDAR_USEPOLLING=true
       - NODE_ENV=development
       - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@database:5432/${POSTGRES_DB}
-    command: sh -c "chmod +x ./db-init.sh && npm install && ./db-init.sh && npm run dev"
+    command: sh -c "npm install && npm run seed && npm run dev"
 
   database:
     image: postgres:16
-    
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
