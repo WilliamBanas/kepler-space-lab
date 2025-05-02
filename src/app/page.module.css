@@ -6,7 +6,6 @@
   width: 100vw;
   position: relative;
   z-index: 1;
-  padding: 0 1rem;
   text-align: center;
   pointer-events: auto;
 }
@@ -26,6 +25,9 @@
   font-size: 32px;
   font-weight: 600;
   margin-top: 1em;
+  animation: fadeInText 0.5s cubic-bezier(0,0,0,1) 1s forwards;
+  opacity: 0;
+  transform: translateX(-2rem);
 }
 
 .home__catchphrase {
@@ -34,6 +36,9 @@
   text-align: center;
   max-width: 700px;
   margin-top: 8rem;
+  animation: fadeInText 0.5s cubic-bezier(0,0,0,1) 1.5s forwards;
+  opacity: 0;
+  transform: translateX(-2rem);
 }
 
 .home__button {
@@ -51,6 +56,9 @@
   cursor: pointer;
   transition: 100ms;
   margin-top: 8rem;
+  animation: fadeInButton 0.5s cubic-bezier(0,0,0,1) 2s forwards;
+  opacity: 0;
+  transform: translateY(-2rem);
 }
 
 .home__button_icon {
@@ -60,4 +68,29 @@
 .home__button:hover {
   transition: 100ms;
   gap: 0.5rem;
+}
+
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes fadeInButton {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
 }

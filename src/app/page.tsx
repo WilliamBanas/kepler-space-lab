@@ -21,7 +21,6 @@ const Home: React.FC = () => {
         </p>
         <Link
           href="/solar-system"
-          id="callToActionButton"
           className={styles.home__button}
         >
           <ChevronRight className={styles.home__button_icon} />

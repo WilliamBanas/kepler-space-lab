@@ -1,6 +1,7 @@
 :root {
   --primary-color: #fff;
   --secondary-color: #dadada;
+  --tertiary-color: #b0b0b0;
 }
 
 html, body {
@@ -26,7 +27,6 @@ html, body {
   justify-content: center;
   align-items: center;
   z-index: 2;
-  color: #dadada;
   pointer-events: none;
 }
 
@@ -39,25 +39,6 @@ html, body {
   z-index: 0; 
   pointer-events: auto;
 
-}
-
-/* animation qui commence 1s apres mount, dure 0.5s et finit 1.5s après le mount */
-h1, h2, h3, p {
-  animation: textFadeIn 0.5s cubic-bezier(0,0,0,1) 1s forwards;
-  transform: translateX(-2rem);
-  opacity: 0;
-}
-
-/* animation qui commence 1.5s apres mount, dure 0.5s et finit 2s après le mount */
-p {
-  animation-delay: 1.5s;
-}
-
-/* animation qui commence 2s apres mount, dure 0.5s et finit 2.5s après le mount */
-#callToActionButton {
-  animation: buttonFadeIn 0.5s cubic-bezier(0,0,0,1) 2s forwards;
-  transform: translateY(-2rem);
-  opacity: 0;
 }
 
 /* animation qui commence 0s apres mount, dure 1s et finit 1s après le mount */
@@ -137,26 +118,5 @@ p {
   }
 }
 
-@keyframes textFadeIn {
-  from {
-    transform: translateX(-2rem);
-    opacity: 0;
-  }
 
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 
-@keyframes buttonFadeIn {
-  from {
-    transform: translateY(-2rem);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
