@@ -3,6 +3,15 @@ import ClientLayout from "./ClientLayout";
 import "./globals.css";
 import "./reset.css";
 import { DM_Sans } from "next/font/google";
+import { initializeDatabase } from '@/lib/database';
+
+(async () => {
+  try {
+    await initializeDatabase();
+  } catch (error) {
+    console.error("Failed to initialize database", error);
+  }
+})();
 
 const dmSans = DM_Sans({
   subsets: ["latin"],

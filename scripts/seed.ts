@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-import { AppDataSource } from '../ormconfig';
-import { CelestialBody } from '../src/entity/CelestialBody';
+import { AppDataSource } from '@/lib/database';
+import { CelestialBody } from '../src/entities/CelestialBody';
 import type { DeepPartial } from 'typeorm';
 import rawData from './data/celestialBodies.json';
 

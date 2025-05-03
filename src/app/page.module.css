@@ -21,7 +21,7 @@
 }
 
 .home__header_title {
-  color: var(--primary-color);
+  color: var(--primary-text);
   font-size: 32px;
   font-weight: 600;
   margin-top: 1em;
@@ -31,7 +31,7 @@
 }
 
 .home__catchphrase {
-  color: var(--secondary-color);
+  color: var(--secondary-text);
   font-size: 24px;
   text-align: center;
   max-width: 700px;
@@ -47,7 +47,7 @@
   align-items: center;
   gap: 1rem;
   font-family: inherit;
-  color: var(--primary-color);
+  color: var(--primary-text);
   font-size: 24px;
   font-weight: 500;
   background-color: transparent;
@@ -62,7 +62,7 @@
 }
 
 .home__button_icon {
-  color: var(--secondary-color);
+  color: var(--secondary-text);
 }
 
 .home__button:hover {

@@ -11,9 +11,14 @@
 }
 
 .solarSystem__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 80px;
+  padding: 0 16px;
   box-sizing: border-box;
+  pointer-events: auto;
   background: linear-gradient(180deg,rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
@@ -21,7 +26,6 @@
 display: flex;
 align-items: center;
 height: 100%;
-padding: 0 16px;
 gap: 1em;
 }
 
@@ -31,9 +35,63 @@ gap: 1em;
 }
 
 .solarSystem__header_logo_text {
-  color: var(--secondary-color);
+  color: var(--secondary-text);
   font-weight: 600;
   font-size: 16px;
+}
+
+
+
+.solarSystem__header_searchBar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 32px;
+  transition: 250ms;
+  width: fit-content;
+  transition: 250ms;
+  box-sizing: border-box;
+}
+
+.form {
+  width: fit-content;
+  height: 100%;
+  transition: 250ms;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.button_wrap {
+  cursor: pointer;
+  position: absolute;
+  right: 0.75rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.solarSystem__header_searchBar_icon {
+  width: 16px;
+  height: 16px;
+  color: var(--secondary-text);
+}
+
+.solarSystem__header_searchBar_input {
+  background: none;
+  transition: 250ms;
+  color: var(--secondary-text);
+  padding: 0 2rem 0 1rem;
+  border: var(--border) 1px solid;
+  width: 100%;
+  height: 100%;  
+  border-radius: 8px;
+  background-color: var(--background);
 }
 
 @keyframes fadeInPage {
