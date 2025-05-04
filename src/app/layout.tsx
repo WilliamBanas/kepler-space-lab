@@ -15,6 +15,7 @@ import { initializeDatabase } from '@/lib/database';
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
+  style: ['normal', 'italic'],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
