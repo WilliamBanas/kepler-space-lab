@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 
-const StarFieldCanvas = dynamic(() => import('./components/Starfield/StarfieldComponents'), {
+const SolarSystemCanvas = dynamic(() => import('./components/SolarSystem/SolarSystemScene'), {
   ssr: false,
   loading: () => (
     <div style={{ 
@@ -35,7 +35,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <>
 
-      {mounted && <div id='starFieldContainer'><StarFieldCanvas /></div> }
+      {mounted && <div id='starFieldContainer'><SolarSystemCanvas /></div> }
       <div id="content">{children}</div>
     </>
   );

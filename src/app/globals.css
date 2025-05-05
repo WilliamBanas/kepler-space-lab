@@ -1,5 +1,5 @@
 :root {
-  --background: #1c1c1e;
+  --background: #111;
   --primary-text: #fff;
   --secondary-text: #dadada;
   --border: #48484a;
@@ -19,6 +19,16 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.icon_small {
+	width: 16px;
+	height: 16px;
+}
+
+.icon_medium {
+	width: 24px;
+	height: 24px;
 }
 
 #content {

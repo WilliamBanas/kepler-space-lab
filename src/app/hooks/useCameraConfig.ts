@@ -15,28 +15,28 @@ const pathname = usePathname();
   return useMemo(() => {
     if (pathname === "/solar-system") {
       return {
-        position: [0, 0, 100],
+        position: [0, 0, 500],
         fov: 60,
         near: 1,
-        far: 100000,
+        far: 500000,
         controls: true,
       };
     } 
     if (pathname === "/") {
       return {
-        position: [0,0, 22000],
+        position: [0,0, 230000],
         fov: 60,
         near: 1,
-        far: 100000,
+        far: 500000,
         controls: true,
       };
     }
 
     return {
-      position: [0,0,22000],
+      position: [0,0,220000],
       fov: 60,
       near: 1,
-      far: 100000,
+      far: 500000,
       controls: false,
     };
   }, [pathname]);

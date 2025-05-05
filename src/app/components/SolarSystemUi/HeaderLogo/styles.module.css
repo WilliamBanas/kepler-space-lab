@@ -1,0 +1,17 @@
+.headerLogo {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	gap: 1em;
+}
+
+.headerLogo__image {
+	width: 50px;
+	height: 50px;
+}
+
+.headerLogo__title {
+	color: var(--secondary-text);
+	font-weight: 600;
+	font-size: 16px;
+}

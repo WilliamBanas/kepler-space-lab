@@ -4,12 +4,10 @@ import styles from "./page.module.css";
 import Logo from "./components/Logo/Logo";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
-// Nous supprimons l'import de StarField car il est maintenant dans layout.tsx
 
 const Home: React.FC = () => {
   return (
     <>
-      {/* Suppression du composant StarField ici */}
       <main className={styles.home}>
         <div className={styles.home__header}>
           <Logo />
